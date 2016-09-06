@@ -9,12 +9,12 @@ from selenium.webdriver.common.keys import Keys
 # IT IS THE RESPONSIBLITY OF USER TO LOGIN SUCCESSFULLY.
 # TO EXIT PRESS Ctrl+C.
 
-s1="  WELCOME TO WHATSAPP CHAT BOT  "
+s1="  WELCOME TO SHAMMER  "
 s2=""" 
 	Enter number of spam messages and Press 'enter' key. 
 	A browser window will open where you will have to scan the
 	QR code for whatsapp web login. After successful login, open
-	the contact you want to spam and press 'enter' key.Press Ctrl+C to exit. 
+	the contact you want to spam and press 'enter' key.Press Ctrl+C to exit.
 	Once setup is complete the bot will spam the chat by last message 
 	present in the conversation (Make sure you have atleast one message 
 	in the conversation).
@@ -32,12 +32,11 @@ try:
 	raw_input() # USER IS READY TO AUTOMATE THE CHAT
 	chat_text = browser.find_element_by_xpath("(//span[@class='emojitext selectable-text'])[last()]")
 	message_field = browser.find_element_by_xpath("//div[@dir='auto']")
-	for count in range(total+1):
-		print "sent message %d times" %(count+1)
+	for count in range(total):
 		message_field.send_keys(str(chat_text.text))
 		message_field.send_keys(Keys.ENTER)
+		print "sent message %d times" %(count+1)
 	print "\n%s" %(s3.center(80,'*'))
-	browser.quit()
 
 except (KeyboardInterrupt, EOFError):
 	print "\n\n%s\n\n" %("  EXITING NOW  ").center(80,'*')
