@@ -1,5 +1,3 @@
-import json
-import requests
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException , NoSuchElementException
 from selenium.webdriver.common.keys import Keys
