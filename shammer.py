@@ -7,6 +7,8 @@ from selenium.webdriver.common.keys import Keys
 # IT IS THE RESPONSIBLITY OF USER TO LOGIN SUCCESSFULLY.
 # TO EXIT PRESS Ctrl+C.
 
+
+
 s1="  WELCOME TO SHAMMER  "
 s2=""" 
 	Enter number of spam messages and Press 'enter' key. 
@@ -24,7 +26,7 @@ print "\n\n%s" %(s2.center(60,' '))
 total = int(raw_input("\n\nENTER NUMBER OF SPAM MESSAGES "))
 
 try:
-	browser = webdriver.Chrome()
+	browser = webdriver.Chrome(executable_path='C:\chrome\chromedriver.exe')
 	browser.implicitly_wait(60) # TIMEOUT SET TO 60s
 	browser.get("https://web.whatsapp.com")
 	raw_input() # USER IS READY TO AUTOMATE THE CHAT
